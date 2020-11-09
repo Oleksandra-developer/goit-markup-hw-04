@@ -174,7 +174,7 @@ nav .link {
 .contacts-1 {
   display: flex;
   margin-left: auto;
-  /* justify-content: flex-end; */
+  align-items: flex-end;
   margin-top: 0;
 }
 .logo,
@@ -192,9 +192,10 @@ nav .link {
 .logo-1 {
   color: var(--title-color);
 }
-.link:hover,
-.link:focus,
-.contact-link:hover .svg-contact {
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:hover .svg-contact,
+.nav-link:focus .svg-contact {
   color: var(--accent-color);
   fill: var(--accent-color);
 }
@@ -379,7 +380,7 @@ nav .link {
 .team-card:nth-child(4n + 1) {
   margin-left: 0;
 }
-.social-link:not(:last-child) {
+.social-button:not(:last-child) {
   margin-right: 10px;
 }
 .social {
@@ -388,22 +389,23 @@ nav .link {
 .social-item {
   fill: var(--social-item);
 }
+.social-link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background-color: #fff;
+  padding: 12px;
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+}
 .social-link:hover .social-item {
   fill: var(--white);
 }
 .social-link:focus .social-item {
   fill: var(--white);
-}
-
-.social-bg {
-  fill: var(--white);
-}
-
-.social-link:hover .social-bg {
-  fill: var(--accent-color);
-}
-.social-link:focus .social-bg {
-  fill: var(--accent-color);
 }
 
 /* our clients */
@@ -414,34 +416,37 @@ nav .link {
 .clients-list {
   display: flex;
 }
-.client-item {
-  box-sizing: border-box;
+.client-button {
+  margin-right: 30px;
   height: 90px;
   width: 170px;
+}
+.client-item {
+  display: inline-block;
+  /* box-sizing: border-box; */
+  height: inherit;
+  width: inherit;
+  border-color: var(--social-item);
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
 }
 .client-item:not(:last-child) {
   margin-right: 30px;
 }
+.client-item:focus,
+.client-item:hover {
+  border-color: var(--accent-color);
+}
 .client {
   fill: var(--social-item);
 }
-.border {
-  fill: none;
-  stroke-width: 1px;
-  stroke: var(--social-item);
-}
-.client-item:hover .client {
-  fill: var(--accent-color);
-}
+
+.client-item:hover .client,
 .client-item:focus .client {
   fill: var(--accent-color);
 }
-.client-item:hover .border {
-  stroke: var(--accent-color);
-}
-.client-item:focus .border {
-  stroke: var(--accent-color);
-}
+
 /* footer */
 .bg-footer .logo-1,
 .bg-footer .adress {
@@ -466,8 +471,12 @@ nav .link {
   color: var(--white);
   margin-bottom: 20px;
 }
-.bg-footer .social-bg {
-  fill: rgba(255, 255, 255, 0.1);
+.bg-footer .social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
 }
 .footer-halfs {
   display: flex;

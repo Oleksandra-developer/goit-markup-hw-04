@@ -179,12 +179,14 @@ ul {
 nav .link {
   color: var(--title-color);
 }
-.link:hover,
-.link:focus,
-.contact-link:hover .svg-contact {
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:hover .svg-contact,
+.nav-link:focus .svg-contact {
   color: var(--accent-color);
   fill: var(--accent-color);
 }
+
 .svg-contact {
   margin-right: 10px;
   fill: var(--main-text);
@@ -197,9 +199,12 @@ nav .link {
   color: var(--adress-color);
 }
 .button:hover,
-button:active {
+button:focus {
   background-color: var(--accent-color);
   color: var(--white);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 .header {
   padding-top: 25px;
@@ -217,7 +222,7 @@ nav {
 .contacts-1 {
   display: flex;
   margin-left: auto;
-  /* justify-content: flex-end; */
+  align-items: flex-end;
   margin-top: 0;
 }
 .visually-hidden {
@@ -284,6 +289,11 @@ nav {
 .legend {
   padding: 20px 24px;
 }
+.card:hover,
+.card:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .contact-footer:not(:first-child) {
   margin-top: 9px;
 }
@@ -316,14 +326,18 @@ nav {
 .social-link:focus .social-item {
   fill: var(--white);
 }
-
-.social-bg {
-  fill: var(--white);
+.social-button:not(:last-child) {
+  margin-right: 10px;
 }
-
-.social-link:hover .social-bg {
-  fill: var(--accent-color);
+.social-link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px;
 }
-.social-link:focus .social-bg {
-  fill: var(--accent-color);
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
 }
