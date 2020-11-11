@@ -170,7 +170,11 @@ nav {
 nav .link {
   color: var(--title-color);
 }
-
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .contacts-1 {
   display: flex;
   margin-left: auto;
